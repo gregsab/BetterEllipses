@@ -1,24 +1,6 @@
 services:
-
-  ellipses_app:
-    image: ellipses
-    labels:
-      com.example.description: "A tool for learning how to draw better ellipses"
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: exampleuser
-      WORDPRESS_DB_PASSWORD: examplepass
-      WORDPRESS_DB_NAME: exampledb
+  python:
+    image: 127.0.0.1:5000/ellipses
     ports:
-          - "5000:5000"
-    # networks:
-    #   - overlay
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: vip
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 50M
+      - 5002:5002
       
